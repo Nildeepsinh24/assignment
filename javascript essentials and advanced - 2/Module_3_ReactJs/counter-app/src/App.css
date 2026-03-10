@@ -1,0 +1,142 @@
+/* Reset & Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: #f0f2f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 100%;
+  max-width: 600px;
+  padding: 20px;
+}
+
+/* --- List Section Styling (matching the green image) --- */
+.list-section {
+  background-color: #8cc63f;
+  /* Bright green background */
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.list-section h2 {
+  color: white;
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.benefits-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.benefits-list li {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 10px 15px;
+  border-radius: 4px;
+  color: #444;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.check-icon {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  height: 24px;
+  background-color: #a3d977;
+  /* Lighter green circle */
+  color: white;
+  border-radius: 50%;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+
+/* --- Counter Section Styling (matching the blue image) --- */
+.counter-section {
+  background-color: #3b82f6;
+  /* Blue background */
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  color: white;
+}
+
+.counter-section h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+
+.counter-display h2 {
+  font-size: 4rem;
+  margin-bottom: 30px;
+  font-weight: 300;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: transform 0.1s, opacity 0.2s;
+}
+
+.btn:active {
+  transform: scale(0.95);
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.btn-decrement {
+  background-color: #4b5563;
+  /* Dark gray */
+  color: white;
+}
+
+.btn-increment {
+  background-color: #ef4444;
+  /* Red */
+  color: white;
+}
+
+.btn-reset {
+  background-color: #f59e0b;
+  /* Orange/Yellow */
+  color: white;
+  padding: 8px 30px;
+}
