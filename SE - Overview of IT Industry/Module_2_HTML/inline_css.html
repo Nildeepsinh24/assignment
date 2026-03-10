@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inline CSS Example</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+
+<body style="background-color: #fff3e6; font-family: Arial, sans-serif;">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary mb-0 shadow-sm">
+        <div class="container-fluid px-4">
+            <a class="navbar-brand" href="index.html" style="text-decoration: none;"><i
+                    class="bi bi-arrow-left-circle me-2"></i> Back</a>
+            <span class="navbar-text text-white fw-bold">Inline CSS Assignment</span>
+        </div>
+    </nav>
+
+    <div style="text-align: center; padding: 60px 20px;">
+        <h1
+            style="color: #ff8c00; font-size: 3.5em; margin-bottom: 20px; font-weight: 800; text-shadow: 2px 2px 4px rgba(255,140,0,0.2);">
+            Inline CSS Styling</h1>
+
+        <p
+            style="color: #555; font-size: 1.2rem; font-style: italic; border-left: 6px solid #ff8c00; padding: 15px 20px; display: inline-block; background-color: white; border-radius: 0 8px 8px 0; box-shadow: 0 4px 6px rgba(0,0,0,0.05); max-width: 600px; text-align: left;">
+            This page uses <strong style="color: #ff8c00;">inline CSS</strong>. The styles are applied directly to the
+            HTML tags using the <code>style</code> attribute. It is generally not recommended for large projects due to
+            poor maintainability, but it has the highest specificity.
+        </p>
+
+        <div style="margin-top: 40px;">
+            <button
+                style="background-color: #ff8c00; color: white; border: none; padding: 12px 30px; border-radius: 50px; font-size: 1.1rem; font-weight: bold; cursor: pointer; box-shadow: 0 4px 10px rgba(255,140,0,0.3);">
+                Inline Styled Button
+            </button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

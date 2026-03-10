@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>European Roulette</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        .roulette-bg {
+            background-color: #f8f9fa;
+        }
+
+        .roulette-board {
+            background-color: #279e27;
+            padding: 30px;
+            border-radius: 10px;
+            color: white;
+            text-align: center;
+            border: 4px solid #1c521c;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            margin: 0 auto;
+            max-width: 900px;
+        }
+
+        .roulette-title {
+            color: #ffffff;
+            font-weight: 800;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .rtable {
+            border-collapse: collapse;
+            background-color: transparent;
+            margin: 0 auto;
+        }
+
+        .rtable td {
+            border: 2px solid white;
+            width: 55px;
+            height: 55px;
+            text-align: center;
+            vertical-align: middle;
+            font-weight: bold;
+            font-size: 16px;
+            transition: opacity 0.2s;
+            cursor: pointer;
+        }
+
+        .rtable td:hover {
+            opacity: 0.8;
+        }
+
+        .green {
+            background-color: #279e27;
+        }
+
+        .red {
+            background-color: #E0080B;
+        }
+
+        .black {
+            background-color: #222;
+        }
+
+        .empty {
+            border: none !important;
+            cursor: default;
+        }
+
+        .empty:hover {
+            opacity: 1 !important;
+        }
+    </style>
+</head>
+
+<body class="roulette-bg">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm mb-5">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><i class="bi bi-arrow-left-circle me-2"></i> Back to Dashboard</a>
+            <span class="navbar-text text-white fw-bold">European Roulette Grid</span>
+        </div>
+    </nav>
+
+    <div class="container pb-5">
+        <div class="row pb-4">
+            <div class="col-12">
+                <div class="roulette-board">
+                    <h2 class="roulette-title mb-4"><i class="bi bi-dice-3 me-2"></i>European Roulette</h2>
+                    <div class="table-responsive overflow-hidden">
+                        <table class="rtable mx-auto">
+                            <!-- Row 1 -->
+                            <tr>
+                                <td rowspan="3" class="green fs-3">0</td>
+                                <td class="red">3</td>
+                                <td class="black">6</td>
+                                <td class="red">9</td>
+                                <td class="red">12</td>
+                                <td class="black">15</td>
+                                <td class="red">18</td>
+                                <td class="red">21</td>
+                                <td class="black">24</td>
+                                <td class="red">27</td>
+                                <td class="red">30</td>
+                                <td class="black">33</td>
+                                <td class="red">36</td>
+                                <td class="green">2to1</td>
+                            </tr>
+                            <!-- Row 2 -->
+                            <tr>
+                                <td class="black">2</td>
+                                <td class="red">5</td>
+                                <td class="black">8</td>
+                                <td class="black">11</td>
+                                <td class="red">14</td>
+                                <td class="black">17</td>
+                                <td class="black">20</td>
+                                <td class="red">23</td>
+                                <td class="black">26</td>
+                                <td class="black">29</td>
+                                <td class="red">32</td>
+                                <td class="black">35</td>
+                                <td class="green">2to1</td>
+                            </tr>
+                            <!-- Row 3 -->
+                            <tr>
+                                <td class="red">1</td>
+                                <td class="black">4</td>
+                                <td class="red">7</td>
+                                <td class="black">10</td>
+                                <td class="black">13</td>
+                                <td class="red">16</td>
+                                <td class="red">19</td>
+                                <td class="black">22</td>
+                                <td class="red">25</td>
+                                <td class="black">28</td>
+                                <td class="black">31</td>
+                                <td class="red">34</td>
+                                <td class="green">2to1</td>
+                            </tr>
+                            <!-- Row 4 -->
+                            <tr>
+                                <td class="empty"></td>
+                                <td colspan="4" class="green">1st 12</td>
+                                <td colspan="4" class="green">2nd 12</td>
+                                <td colspan="4" class="green">3rd 12</td>
+                                <td class="empty"></td>
+                            </tr>
+                            <!-- Row 5 -->
+                            <tr>
+                                <td class="empty"></td>
+                                <td colspan="2" class="green">1to18</td>
+                                <td colspan="2" class="green">EVEN</td>
+                                <td colspan="2" class="red"><i class="bi bi-suit-diamond-fill"></i></td>
+                                <td colspan="2" class="black"><i class="bi bi-suit-spade-fill"></i></td>
+                                <td colspan="2" class="green">ODD</td>
+                                <td colspan="2" class="green">19to36</td>
+                                <td class="empty"></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

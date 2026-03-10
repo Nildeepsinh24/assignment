@@ -1,0 +1,35 @@
+/* link_pseudo.css */
+body {
+    font-family: Arial, sans-serif;
+    padding: 40px;
+}
+
+/* UNVISITED LINK */
+a.nav-link:link {
+    color: #0066cc;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px;
+    border: 1px solid transparent;
+}
+
+/* VISITED LINK */
+a.nav-link:visited {
+    color: #800080;
+}
+
+/* MOUSE OVER LINK */
+a.nav-link:hover {
+    color: #ffffff;
+    background-color: #0066cc;
+    text-decoration: none;
+    border: 1px solid #004c99;
+    border-radius: 4px;
+}
+
+/* SELECTED/ACTIVE LINK (when clicking) */
+a.nav-link:active {
+    color: #ff0000;
+    background-color: #ffe6e6;
+    border-color: #ff0000;
+}

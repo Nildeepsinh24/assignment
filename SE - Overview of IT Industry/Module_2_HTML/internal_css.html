@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internal CSS Example</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <style>
+        /* Document Specific Styles (Internal CSS) */
+        body {
+            background-color: #e6f7ff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .content-wrapper {
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .custom-heading {
+            color: #005A9C;
+            text-transform: uppercase;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .custom-paragraph {
+            color: #444;
+            font-size: 1.2em;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .internal-box {
+            background-color: white;
+            padding: 30px;
+            border: 3px dashed #005A9C;
+            border-radius: 15px;
+            display: inline-block;
+            margin-top: 40px;
+            font-weight: bold;
+            color: #005A9C;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 8px rgba(0, 90, 156, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary mb-0 shadow-sm">
+        <div class="container-fluid px-4">
+            <a class="navbar-brand" href="index.html"><i class="bi bi-arrow-left-circle me-2"></i> Back</a>
+            <span class="navbar-text text-white fw-bold">Internal CSS Assignment</span>
+        </div>
+    </nav>
+
+    <div class="content-wrapper">
+        <h1 class="custom-heading">Welcome to Internal CSS</h1>
+        <p class="custom-paragraph">This paragraph is styled using CSS located in the <code>&lt;style&gt;</code> block
+            within the <code>&lt;head&gt;</code> section of the document.</p>
+
+        <div class="internal-box">
+            <i class="bi bi-box me-2"></i>Internal CSS Styled Box
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
