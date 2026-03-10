@@ -40,11 +40,20 @@ const TopBar = styled.div`
   font-size: 13px;
   color: #777;
   border-bottom: 1px solid #eaeaea;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  @media (max-width: 768px) {
+    justify-content: center;
+    text-align: center;
+  }
 `;
 
 const TopLinks = styled.div`
   display: flex;
   gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
 `;
 
 // 2. Middle Header (Logo & Search)
@@ -53,6 +62,12 @@ const MiddleHeader = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 25px 0;
+  flex-wrap: wrap;
+  gap: 20px;
+  
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 const Logo = styled.div`
@@ -70,6 +85,12 @@ const SearchContainer = styled.div`
   border: 2px solid #3bb77e;
   border-radius: 5px;
   overflow: hidden;
+  min-width: 300px;
+  
+  @media (max-width: 768px) {
+    width: 100%;
+    flex: 1;
+  }
 `;
 
 const CategorySelect = styled.select`
@@ -79,6 +100,9 @@ const CategorySelect = styled.select`
   background: white;
   outline: none;
   font-weight: 600;
+  @media (max-width: 480px) {
+    display: none;
+  }
 `;
 
 const SearchInput = styled.input`
@@ -87,6 +111,7 @@ const SearchInput = styled.input`
   border: none;
   outline: none;
   font-size: 15px;
+  min-width: 50px;
 `;
 
 const SearchButton = styled.button`
@@ -101,6 +126,8 @@ const ActionIcons = styled.div`
   display: flex;
   gap: 20px;
   align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
 
   div {
     display: flex;
@@ -125,6 +152,8 @@ const Nav = styled.nav`
   padding: 15px 0;
   border-bottom: 1px solid #eaeaea;
   border-top: 1px solid #eaeaea;
+  flex-wrap: wrap;
+  gap: 15px;
 `;
 
 const BrowseCategories = styled.button`
@@ -139,12 +168,19 @@ const BrowseCategories = styled.button`
   font-weight: 700;
   font-size: 16px;
   cursor: pointer;
+  
+  @media (max-width: 768px) {
+    flex: 1;
+    justify-content: center;
+  }
 `;
 
 const NavLinks = styled.ul`
   display: flex;
   gap: 30px;
   align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
 
   li {
     display: flex;
@@ -159,6 +195,10 @@ const NavLinks = styled.ul`
       color: #3bb77e;
     }
   }
+
+  @media (max-width: 1024px) {
+    display: none; /* In a real app we'd add a mobile hamburger menu. Hiding to save space for now */
+  }
 `;
 
 const SupportInfo = styled.div`
@@ -168,6 +208,10 @@ const SupportInfo = styled.div`
   font-size: 22px;
   font-weight: 700;
   color: #3bb77e;
+  
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 // 4. Hero Banner Section
@@ -179,6 +223,13 @@ const HeroSection = styled.section`
   padding: 60px;
   position: relative;
   overflow: hidden;
+  min-height: 400px;
+  align-items: center;
+  
+  @media (max-width: 768px) {
+    padding: 30px;
+    min-height: auto;
+  }
 `;
 
 const HeroContent = styled.div`
@@ -190,6 +241,10 @@ const HeroContent = styled.div`
     color: #253D4E;
     line-height: 1.1;
     margin-bottom: 20px;
+    
+    @media (max-width: 768px) {
+      font-size: 35px;
+    }
   }
   
   p {
@@ -204,7 +259,22 @@ const SubscribeForm = styled.div`
   background: white;
   border-radius: 30px;
   padding: 5px;
-  width: 450px;
+  width: 100%;
+  max-width: 450px;
+  
+  @media (max-width: 500px) {
+    flex-direction: column;
+    background: transparent;
+    padding: 0;
+    button {
+      margin-top: 10px;
+    }
+    input {
+      background: white;
+      padding: 15px;
+      border-radius: 30px;
+    }
+  }
   
   input {
     flex: 1;
@@ -233,8 +303,12 @@ const HeroImage = styled.div`
   bottom: 0;
   width: 45%;
   height: 100%;
-  /* Using a placeholder gradient for the vegetable bag image */
   background: url('https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&q=80&w=800') center/contain no-repeat;
+  
+  @media (max-width: 1024px) {
+    opacity: 0.3;
+    right: -50px;
+  }
 `;
 
 // 5. Featured Categories Section
@@ -247,6 +321,7 @@ const SectionHeader = styled.div`
   align-items: center;
   gap: 30px;
   margin-bottom: 30px;
+  flex-wrap: wrap;
 
   h2 {
     font-size: 28px;
@@ -258,6 +333,7 @@ const SectionHeader = styled.div`
     gap: 20px;
     color: #253D4E;
     font-weight: 600;
+    flex-wrap: wrap;
     
     li {
       cursor: pointer;
@@ -270,6 +346,10 @@ const CategoriesGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(10, 1fr);
   gap: 20px;
+  
+  @media (max-width: 1200px) { grid-template-columns: repeat(5, 1fr); }
+  @media (max-width: 768px) { grid-template-columns: repeat(3, 1fr); }
+  @media (max-width: 480px) { grid-template-columns: repeat(2, 1fr); }
 `;
 
 const CategoryCard = styled.div`

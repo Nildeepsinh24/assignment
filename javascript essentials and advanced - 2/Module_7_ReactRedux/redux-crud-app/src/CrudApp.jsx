@@ -43,17 +43,17 @@ export default function CrudApp() {
         <div className="container mt-5">
 
             {/* Header & Logout */}
-            <div className="d-flex justify-content-between align-items-center mb-4">
+            <div className="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
                 <h2>Product Management</h2>
                 <div>
-                    <span className="me-3">Welcome, <strong>{user}</strong>!</span>
+                    <span className="me-3">Welcome, <strong className="d-none d-sm-inline">{user}</strong>!</span>
                     <button className="btn btn-danger btn-sm" onClick={() => dispatch(logout())}>Logout</button>
                 </div>
             </div>
 
             {/* Top Bar: Search and Create */}
-            <div className="d-flex justify-content-between mb-3 align-items-end">
-                <div style={{ width: '300px' }}>
+            <div className="d-flex justify-content-between mb-3 align-items-end flex-wrap gap-3">
+                <div style={{ width: '100%', maxWidth: '300px' }}>
                     <label className="form-label fw-bold">Search products: {searchQuery}</label>
                     <input
                         className="form-control"
@@ -62,40 +62,42 @@ export default function CrudApp() {
                         onChange={(e) => dispatch(setSearchQuery(e.target.value))}
                     />
                 </div>
-                <button className="btn btn-primary" onClick={() => handleOpenModal()}>+ Create Product</button>
+                <button className="btn btn-primary w-sm-auto w-100 mt-2 mt-sm-0" onClick={() => handleOpenModal()}>+ Create Product</button>
             </div>
 
             {/* Product Table */}
-            <table className="table table-bordered table-striped table-hover mt-3">
-                <thead className="table-dark">
-                    <tr>
-                        <th>Name</th>
-                        <th>Price</th>
-                        <th>Category</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {filteredItems.length > 0 ? filteredItems.map(item => (
-                        <tr key={item.id}>
-                            <td>{item.name}</td>
-                            <td>${item.price}</td>
-                            <td>{item.category}</td>
-                            <td>
-                                {/* 
-                  These buttons fulfill the requirement to Read (view via table),
-                  Update (Edit), and Delete via Redux state.
-                */}
-                                <button className="btn btn-info btn-sm text-white me-2" onClick={() => console.log("Read details for", item.id)}>Read</button>
-                                <button className="btn btn-warning btn-sm text-white me-2" onClick={() => handleOpenModal(item)}>Edit</button>
-                                <button className="btn btn-danger btn-sm" onClick={() => dispatch(deleteProduct(item.id))}>Delete</button>
-                            </td>
+            <div className="table-responsive">
+                <table className="table table-bordered table-striped table-hover mt-3">
+                    <thead className="table-dark">
+                        <tr>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Category</th>
+                            <th>Action</th>
                         </tr>
-                    )) : (
-                        <tr><td colSpan="4" className="text-center">No products found.</td></tr>
-                    )}
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                        {filteredItems.length > 0 ? filteredItems.map(item => (
+                            <tr key={item.id}>
+                                <td>{item.name}</td>
+                                <td>${item.price}</td>
+                                <td>{item.category}</td>
+                                <td style={{ minWidth: '180px' }}>
+                                    {/* 
+                      These buttons fulfill the requirement to Read (view via table),
+                      Update (Edit), and Delete via Redux state.
+                    */}
+                                    <button className="btn btn-info btn-sm text-white me-1 mb-1" onClick={() => console.log("Read details for", item.id)}>Read</button>
+                                    <button className="btn btn-warning btn-sm text-white me-1 mb-1" onClick={() => handleOpenModal(item)}>Edit</button>
+                                    <button className="btn btn-danger btn-sm mb-1" onClick={() => dispatch(deleteProduct(item.id))}>Delete</button>
+                                </td>
+                            </tr>
+                        )) : (
+                            <tr><td colSpan="4" className="text-center">No products found.</td></tr>
+                        )}
+                    </tbody>
+                </table>
+            </div>
 
             {/* Basic Custom Modal for Create/Update */}
             {showModal && (

@@ -1,4 +1,4 @@
-import { useSelector } from 'react';
+import { useSelector } from 'react-redux';
 import AuthPage from './AuthPage';
 import CrudApp from './CrudApp';
 
