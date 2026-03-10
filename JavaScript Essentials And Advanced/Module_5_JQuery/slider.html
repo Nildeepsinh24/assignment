@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Animated Slider</title>
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: #2b2b2b;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        h2 {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        /* The main hidden overflow container */
+        .slider-container {
+            width: 800px;
+            height: 400px;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            position: relative;
+        }
+
+        /* The wide track holding all images */
+        .slider-track {
+            display: flex;
+            width: 3200px;
+            /* 800px * 4 images */
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .slide {
+            width: 800px;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            font-weight: bold;
+            color: rgba(255, 255, 255, 0.8);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Sample colored slides */
+        .slide:nth-child(1) {
+            background: linear-gradient(135deg, #FF6B6B, #C0392B);
+        }
+
+        .slide:nth-child(2) {
+            background: linear-gradient(135deg, #4ECDC4, #16A085);
+        }
+
+        .slide:nth-child(3) {
+            background: linear-gradient(135deg, #FDCB6E, #E67E22);
+        }
+
+        .slide:nth-child(4) {
+            background: linear-gradient(135deg, #6C5CE7, #8E44AD);
+        }
+
+        /* Navigation Controls */
+        .controls {
+            margin-top: 30px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.1s;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .btn:hover {
+            background-color: #45a049;
+        }
+
+        .btn:active {
+            transform: scale(0.95);
+        }
+
+        .btn:disabled {
+            background-color: #555;
+            cursor: not-allowed;
+            color: #888;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>jQuery Custom Animated Slider</h2>
+
+    <div class="slider-container">
+        <!-- The track containing all the slides -->
+        <div class="slider-track" id="mainTrack">
+            <div class="slide">Slide 1</div>
+            <div class="slide">Slide 2</div>
+            <div class="slide">Slide 3</div>
+            <div class="slide">Slide 4</div>
+        </div>
+    </div>
+
+    <!-- Controls -->
+    <div class="controls">
+        <button class="btn" id="prevBtn" disabled>&#8592; Previous</button>
+        <button class="btn" id="nextBtn">Next &#8594;</button>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            let currentIndex = 0;
+            const slideCount = $('.slide').length;
+            const slideWidth = 800; // Width of a single slide
+
+            function updateButtons() {
+                // Disable/Enable Previous button
+                if (currentIndex === 0) {
+                    $('#prevBtn').prop('disabled', true);
+                } else {
+                    $('#prevBtn').prop('disabled', false);
+                }
+
+                // Disable/Enable Next button
+                if (currentIndex === slideCount - 1) {
+                    $('#nextBtn').prop('disabled', true);
+                } else {
+                    $('#nextBtn').prop('disabled', false);
+                }
+            }
+
+            // Next Button Click Event
+            $('#nextBtn').click(function () {
+                if (currentIndex < slideCount - 1) {
+                    currentIndex++;
+
+                    // The core jQuery .animate() method for sliding effect
+                    $('#mainTrack').animate({
+                        left: -(currentIndex * slideWidth) + 'px'
+                    }, 500, 'swing'); // 500ms duration with 'swing' easing
+
+                    updateButtons();
+                }
+            });
+
+            // Previous Button Click Event
+            $('#prevBtn').click(function () {
+                if (currentIndex > 0) {
+                    currentIndex--;
+
+                    // The core jQuery .animate() method for sliding effect
+                    $('#mainTrack').animate({
+                        left: -(currentIndex * slideWidth) + 'px'
+                    }, 500, 'swing');
+
+                    updateButtons();
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
