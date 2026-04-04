@@ -1,0 +1,14 @@
+.topic-shell {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #fff9e6, #e7f5ff 55%, #eafff1);
+}
+
+.hero {
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.94);
+}
+
+.task-card {
+  border: 1px solid #dce7f2;
+  background: #f8fbff;
+}

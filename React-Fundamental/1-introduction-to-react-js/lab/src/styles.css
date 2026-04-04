@@ -1,0 +1,18 @@
+.topic-shell {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 20% 15%, rgba(255, 193, 7, 0.22), transparent 30%),
+    radial-gradient(circle at 82% 20%, rgba(13, 110, 253, 0.14), transparent 28%),
+    linear-gradient(135deg, #fff4e6, #e8f6ff 60%, #e6ffef);
+}
+
+.topic-card {
+  max-width: 720px;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.94);
+}
+
+.demo-panel {
+  border: 1px solid #dce8f3;
+  background: #f8fbff;
+}

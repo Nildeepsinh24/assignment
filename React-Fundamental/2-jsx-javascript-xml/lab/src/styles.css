@@ -1,0 +1,15 @@
+.topic-shell {
+  min-height: 100vh;
+  background: linear-gradient(145deg, #e8fff7, #eaf2ff 55%, #fff9e8);
+}
+
+.topic-card {
+  max-width: 700px;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.94);
+}
+
+.demo-panel {
+  border: 1px solid #d9e7f5;
+  background: #f7fbff;
+}
